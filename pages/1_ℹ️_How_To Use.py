@@ -14,4 +14,11 @@ st.sidebar.image(logo)
 
 st.title("How To Use")
 
+st.header("Instructions")
+
+markdown = """
+1. Upload / Drag an Image to Box 
+
+"""
+
 
