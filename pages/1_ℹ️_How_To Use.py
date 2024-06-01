@@ -17,8 +17,10 @@ st.title("How To Use")
 st.header("Instructions")
 
 markdown = """
-1. Upload / Drag an Image to Box 
+1. Firts Please Upload / Drag Image File to box 
 
 """
+
+st.markdown(markdown)
 
 

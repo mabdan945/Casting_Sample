@@ -17,7 +17,6 @@ st.header('Please upload a Casting Product Image')
 # upload file
 file = st.file_uploader('', type=['jpeg', 'jpg', 'png'])
 
-st.header('Please upload a Casting Product Image')
 
 # load classifier
 model = load_model('./modelcast.h5')
