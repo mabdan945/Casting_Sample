@@ -2,6 +2,8 @@ import streamlit as st
 from keras.models import load_model
 from PIL import Image
 import numpy as np
+import leafmap.foliumap as leafmap
+
 
 from util import classify, set_background
 
@@ -64,3 +66,7 @@ if file is not None:
     # write classification
     st.write("## {}".format(class_name))
     st.write("### score: {}%".format(int(conf_score * 1000) / 10))
+
+    m = leafmap.Map(minimap_control=True)
+    m.add_basemap("OpenTopoMap")
+    m.to_streamlit(height=500)
