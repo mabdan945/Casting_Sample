@@ -67,6 +67,4 @@ if file is not None:
     st.write("## {}".format(class_name))
     st.write("### score: {}%".format(int(conf_score * 1000) / 10))
 
-    m = leafmap.Map(minimap_control=True)
-    m.add_basemap("OpenTopoMap")
-    m.to_streamlit(height=500)
+   
