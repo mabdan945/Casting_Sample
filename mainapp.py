@@ -20,7 +20,7 @@ logo = "https://i.imgur.com/UbOXYAU.png"
 st.sidebar.image(logo)
 
 # Customize page title
-st.title("Streamlit for Geospatial Applications")
+st.title("Quality Control Casting Production")
 
 st.markdown(
     """

@@ -1,5 +1,15 @@
 import streamlit as st
 
+markdown = """
+Web App URL: <https://castingsample.streamlit.app/>
+GitHub Repository: <https://github.com/TaufiiquRahman/Casting_Sample>
+"""
+
+st.sidebar.title("About")
+st.sidebar.info(markdown)
+logo = "https://i.imgur.com/UbOXYAU.png"
+st.sidebar.image(logo)
+
 st.title("How To Use")
 
 st.header("Instructions")
