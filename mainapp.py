@@ -2,41 +2,14 @@ import streamlit as st
 from keras.models import load_model
 from PIL import Image
 import numpy as np
-import leafmap.foliumap as leafmap
-
 
 from util import classify, set_background
 
 
-st.set_page_config(layout="wide")
+set_background('./bgrd/bg.jpg')
 
-# Customize the sidebar
-markdown = """
-Web App URL: <https://castingsample.streamlit.app/>
-GitHub Repository: <https://github.com/TaufiiquRahman/Casting_Sample>
-"""
-
-st.sidebar.title("About")
-st.sidebar.info(markdown)
-logo = "https://i.imgur.com/UbOXYAU.png"
-st.sidebar.image(logo)
-
-# Customize page title
-st.title("Quality Control Casting Production")
-
-st.markdown(
-    """
-    This multipage app template demonstrates various interactive web apps created using [streamlit](https://streamlit.io) and [leafmap](https://leafmap.org). It is an open-source project and you are very welcome to contribute to the [GitHub repository](https://github.com/giswqs/streamlit-multipage-template).
-    """
-)
-
-
-
-
-
-
-#set_background('./bgrd/bg.jpg')
-
+# set title
+st.title('Casting Quality Control')
 
 # set header
 st.header('Please upload a Casting Product Image')
@@ -44,7 +17,7 @@ st.header('Please upload a Casting Product Image')
 # upload file
 file = st.file_uploader('', type=['jpeg', 'jpg', 'png'])
 
-
+st.header('Please upload a Casting Product Image')
 
 # load classifier
 model = load_model('./modelcast.h5')
@@ -66,5 +39,3 @@ if file is not None:
     # write classification
     st.write("## {}".format(class_name))
     st.write("### score: {}%".format(int(conf_score * 1000) / 10))
-
-   
