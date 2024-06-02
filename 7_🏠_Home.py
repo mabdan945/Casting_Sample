@@ -2,8 +2,25 @@ import streamlit as st
 from keras.models import load_model
 from PIL import Image
 import numpy as np
+import yaml
+from yaml.loader import SafeLoader
+
+with open('../config.yaml') as file:
+    config = yaml.load(file, Loader=SafeLoader)
+
 
 from util import classify, set_background
+
+authenticator = stauth.Authenticate(
+    config['credentials'],
+    config['cookie']['name'],
+    config['cookie']['key'],
+    config['cookie']['expiry_days'],
+    config['pre-authorized']
+)
+
+authenticator.login()
+
 
 
 set_background('./bgrd/bg.jpg')
